@@ -1,7 +1,7 @@
 # Heart Health Predictor 
 
 ## Project Overview
-This project aims to create a machine learning model that predicts the likelihood of heart disease in patients based on health indicators like cholesterol levels, age, and blood pressure.
+This project aims to create a machine learning model that predicts the likelihood of heart disease in patients based on health indicators like cholesterol levels, age, and blood pressure to be implemented into a web app where the user will provide several medical and lifestyle-related inputs in the form of text fields and the output will be a prediction indicating the likelihood of heart disease.
 
 ---
 
