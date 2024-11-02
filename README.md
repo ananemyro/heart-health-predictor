@@ -21,10 +21,22 @@ This project aims to create a machine learning model that predicts the likelihoo
 - **Train/Test Split:** 80/20 split
 
 ## Evaluation Metrics
-- **Confusion Matrix**
-- **Precision & Recall**
-- **F1 Score**
-- **ROC-AUC Curve**
+- Confusion Matrix
+- Precision & Recall
+- F1 Score
+- ROC-AUC Curve
+
+---
+## Getting Started
+
+### Prerequisites
+- Python 3.7+
+- Required packages: scikit-learn, pandas, numpy, seaborn, matplotlib, imbalanced-learn
+
+### Files in the Repository
+- Heart_Disease_Prediction.csv: The dataset containing patient data with health indicators used for training and testing the model.
+- ml.py: The main script for data preprocessing, model training, evaluation, and generating visualizations.
+- Project Deliverable 1.pdf: Document detailing the initial project proposal.
 
 ---
 
