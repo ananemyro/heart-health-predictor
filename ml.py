@@ -24,11 +24,11 @@ X_scaled = scaler.fit_transform(X)
 
 # Use SMOTE
 # need this?? maybe first see if the dataset is imbalanced?
-smt = SMOTE()
-X_resampled, y_resampled = smt.fit_resample(X_scaled, y)
+# smt = SMOTE()
+# X_resampled, y_resampled = smt.fit_resample(X_scaled, y)
 
 # Split data into train and test
-X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
 # Train with Logistic Regression model
 logreg = LogisticRegression()
