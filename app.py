@@ -8,6 +8,7 @@ app = Flask(__name__)
 logreg = joblib.load('logistic_model.joblib')
 scaler = joblib.load('scaler.joblib')
 
+
 @app.route('/')
 def assess():
     return render_template('assess.html')  # Render the HTML form

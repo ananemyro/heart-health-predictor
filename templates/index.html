@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartMap</title>
+    <style>
+        /* Reset and base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8fdfc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 2px solid #ff7171;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff7171;
+        }
+
+        /* Main content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            flex-direction: row;
+        }
+
+        .heart-shape {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #ff7171;
+            transform: rotate(-45deg);
+            margin-right: 20px;
+        }
+
+        .heart-shape::before,
+        .heart-shape::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ff7171;
+        }
+
+        .heart-shape::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart-shape::after {
+            left: 50px;
+            top: 0;
+        }
+
+        /* Content layout */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        /* Text styling */
+        h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #ff7171;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Start button */
+        .start-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+            background-color: #ffeb99;
+            border: 2px solid #ffeb99;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .start-btn:hover {
+            background-color: #ffd966;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HeartMap</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Assess</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="heart-shape"></div>
+        <div class="content-wrapper">
+            <h1>Assess your risk of <span class="highlight">heart disease</span> with the help of machine learning predictions.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices velit sem. Nunc velit leo, venenatis et enim sit amet, blandit semper dolor. Vestibulum suscipit libero velit, vel interdum augue varius vel. Praesent sed faucibus sapien.</p>
+            <a href="#" class="start-btn">Start!</a>
+        </div>
+    </div>
+
+</body>
+</html>
