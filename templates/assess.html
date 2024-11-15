@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Assessment</title>
+</head>
+<body>
+    <h1>Tell us more about you</h1>
+    <form action="/results" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label for="cholesterol">Cholesterol:</label>
+        <input type="number" id="cholesterol" name="cholesterol" required><br><br>
+
+        <label for="blood_pressure">Blood Pressure:</label>
+        <input type="number" id="blood_pressure" name="blood_pressure" required><br><br>
+
+        <label for="heart_rate">Heart Rate:</label>
+        <input type="number" id="heart_rate" name="heart_rate" required><br><br>
+
+        <label for="smoking">Smoking:</label>
+        <select id="smoking" name="smoking" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+
+        <label for="alcohol">Alcohol Intake:</label>
+        <select id="alcohol" name="alcohol" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+
+        <label for="exercise">Exercise Hours:</label>
+        <input type="number" id="exercise" name="exercise" required><br><br>
+
+        <label for="family_history">Family History:</label>
+        <select id="family_history" name="family_history" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+
+        <label for="diabetes">Diabetes:</label>
+        <select id="diabetes" name="diabetes" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+
+        <label for="obesity">Obesity:</label>
+        <select id="obesity" name="obesity" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+
+        <label for="stress_level">Stress Level:</label>
+        <input type="number" id="stress_level" name="stress_level" required><br><br>
+
+        <label for="blood_sugar">Blood Sugar:</label>
+        <input type="number" id="blood_sugar" name="blood_sugar" required><br><br>
+
+        <label for="angina">Exercise Induced Angina:</label>
+        <select id="angina" name="angina" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+
+        <label for="chest_pain">Chest Pain Type:</label>
+        <select id="chest_pain" name="chest_pain" required>
+            <option value="Typical Angina">Typical Angina</option>
+            <option value="Atypical Angina">Atypical Angina</option>
+            <option value="Non-Anginal Pain">Non-Anginal Pain</option>
+            <option value="Asymptomatic">Asymptomatic</option>
+        </select><br><br>
+
+        <button type="submit">Compute!</button>
+    </form>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib
 import seaborn as sns
 from imblearn.over_sampling import SMOTE
 from matplotlib import pyplot as plt
@@ -88,3 +89,8 @@ plt.ylabel("True Positive Rate")
 plt.title("ROC Curve")
 plt.legend()
 plt.show()
+
+
+# Save the model and scaler
+joblib.dump(logreg, 'logistic_model.joblib')
+joblib.dump(scaler, 'scaler.joblib')
