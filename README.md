@@ -6,7 +6,7 @@ This project aims to create a machine learning model that predicts the likelihoo
 ---
 
 ## Dataset
-- **Source:** Heart Disease Prediction dataset from kaggle (https://www.kaggle.com/datasets/rishidamarla/heart-disease-prediction/data)
+- **Source:** Heart Disease Prediction [dataset](https://www.kaggle.com/datasets/rashadrmammadov/heart-disease-prediction?resource=download&select=heart_disease_dataset.csv) from kaggle.
 - **Description:** Contains labeled patient data, including health metrics like age, cholesterol, and blood pressure.
 - **Target Variable:** Heart disease presence (binary classification: 1 = disease, 0 = no disease)
 
@@ -40,7 +40,7 @@ This project aims to create a machine learning model that predicts the likelihoo
 
 ---
 
-## Contributers
+## Contributors
 Anastasiia Nemyrovska, Shirley Ding, Michelle Sayeh, Lucie Shi
 
 ## Acknowledgments
