@@ -1,20 +1,24 @@
 import pandas as pd
 import seaborn as sns
+from imblearn.over_sampling import SMOTE
 from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, precision_recall_curve, roc_curve
-from imblearn.over_sampling import SMOTE
 
 # Load the dataset from csv with pandas
-data = pd.read_csv('Heart_Disease_Prediction.csv')
+data = pd.read_csv('heart_disease_dataset.csv')
 
-# Label the Heart Disease column
-# Turn text labels to numerical labels
-# Presence will be 1
-# Absence will be 0
-data['Heart Disease'] = data['Heart Disease'].map({'Presence': 1, 'Absence': 0})
+# Check for missing values
+if data['Heart Disease'].isnull().sum() > 0:
+    print(f"Missing values in 'Heart Disease': {data['Heart Disease'].isnull().sum()}")
+    data = data.dropna(subset=['Heart Disease'])
+
+# Encode categorical variables
+categorical_columns = ['Gender', 'Smoking', 'Alcohol Intake', 'Family History', 'Chest Pain Type', 'Diabetes',
+                       'Obesity', 'Exercise Induced Angina']
+data = pd.get_dummies(data, columns=categorical_columns, drop_first=True)
 
 # Features (X) and target (y) variable
 X = data.drop(columns=['Heart Disease'])  # every column except Heart Disease is a feature
@@ -24,8 +28,12 @@ y = data['Heart Disease']
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
+# Apply SMOTE to balance the dataset
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X_scaled, y)
+
 # Split data into train and test
-X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.2, random_state=42)
 
 # Train with Logistic Regression model
 logreg = LogisticRegression()
