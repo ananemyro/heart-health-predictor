@@ -62,30 +62,63 @@
 
         .heart-shape {
             position: relative;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             background-color: #ff7171;
             transform: rotate(-45deg);
-            margin-right: 20px;
+            margin-right: 100px;
         }
 
         .heart-shape::before,
         .heart-shape::after {
             content: "";
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             background-color: #ff7171;
         }
 
         .heart-shape::before {
-            top: -50px;
+            top: -100px;
             left: 0;
         }
 
         .heart-shape::after {
-            left: 50px;
+            left: 100px;
+            top: 0;
+        }
+
+        .inner-heart {
+            position: absolute;
+            z-index: 1;
+            width: 190px;
+            height: 190px;
+            background-color: #f8fdfc;
+            transform: rotate(-45deg);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .inner-heart::before,
+        .inner-heart::after {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background-color: #f8fdfc;
+            z-index: 1;
+        }
+
+        .inner-heart::before {
+            top: -95px;
+            left: 0;
+        }
+
+        .inner-heart::after {
+            left: 95px;
             top: 0;
         }
 
@@ -148,7 +181,9 @@
     </header>
 
     <div class="container">
-        <div class="heart-shape"></div>
+        <div class="heart-shape">
+            <div class="inner-heart"></div>
+        </div>
         <div class="content-wrapper">
             <h1>Assess your risk of <span class="highlight">heart disease</span> with the help of machine learning predictions.</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices velit sem. Nunc velit leo, venenatis et enim sit amet, blandit semper dolor. Vestibulum suscipit libero velit, vel interdum augue varius vel. Praesent sed faucibus sapien.</p>
