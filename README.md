@@ -34,9 +34,9 @@ This project aims to create a machine learning model that predicts the likelihoo
 - Required packages: scikit-learn, pandas, numpy, seaborn, matplotlib, imbalanced-learn
 
 ### Files in the Repository
-- Heart_Disease_Prediction.csv: The dataset containing patient data with health indicators used for training and testing the model.
+- heart_disease_dataset.csv: The dataset containing patient data with health indicators used for training and testing the model.
 - ml.py: The main script for data preprocessing, model training, evaluation, and generating visualizations.
-- Project Deliverable 1.pdf: Document detailing the initial project proposal.
+- Project Deliverable X.pdf: Documents detailing the project development.
 
 ---
 
