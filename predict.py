@@ -29,10 +29,7 @@ new_data_scaled = scaler.transform(new_data_df)
 prediction = logreg.predict(new_data_scaled)
 probability = logreg.predict_proba(new_data_scaled)[:, 1]
 
-# Output
-prediction = prediction[0]
-probability = probability[0]
 
 # Output results
-print("Predicted Heart Disease (0=Absence, 1=Presence):", prediction)
-print("Probability of Heart Disease:", probability)
+print("Predicted Heart Disease (0=Absence, 1=Presence):", prediction[0])
+print("Probability of Heart Disease:", probability[0])

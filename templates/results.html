@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.back-arrow {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.result-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.result-text .highlight {
+    color: #ff6b6b;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #666;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-arrow">&larr;</a>
+        <h1>Results</h1>
+        <p class="result-text"><span class="highlight">{{ result_message }}</span>, {{ description }}</p>
+        <p class="description">
+            Probability of Heart Disease: <strong>{{ probability | round(2) }}</strong>
+        </p>
+        <a href="/">Back to Assessment</a>
+    </div>
+</body>
+</html>

@@ -50,16 +50,33 @@ def results():
     new_data_scaled = scaler.transform(new_data_df)
 
     # Predict
-    prediction = logreg.predict(new_data_scaled)
-    probability = logreg.predict_proba(new_data_scaled)[:, 1]
+    prediction = logreg.predict(new_data_scaled)[0]
+    probability = logreg.predict_proba(new_data_scaled)[0][1]
+
+    # Determine the result message
+    result_message = "Yes" if prediction == 1 else "No"
+    description = (
+        "you are at risk of heart disease." if prediction == 1
+        else "you are not at risk of heart disease."
+    )
+
+    # Pass the data to the template
+    return render_template(
+        'results.html',
+        result_message=result_message,
+        description=description,
+        probability=probability
+    )
 
     # Return results to the user
+    '''
     return f"""
         <h1>Results</h1>
         <p>Predicted Heart Disease (0=Absence, 1=Presence): <strong>{prediction}</strong></p>
-        <p>Probability of Heart Disease: <strong>{probability:.2f}</strong></p>
+        <p>Probability of Heart Disease: <strong>{probability}</strong></p>
         <a href="/">Back to Assessment</a>
     """
+    '''
 
 if __name__ == '__main__':
     app.run(debug=True)
