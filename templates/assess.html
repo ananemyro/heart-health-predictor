@@ -18,15 +18,16 @@
         .container {
             width: 100%;
             max-width: 800px;
-            margin: 0 auto;
+            padding-bottom: 20px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
             text-align: left;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             color: #333;
+            text-align: center;
         }
 
         .highlight {
@@ -36,24 +37,26 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             position: relative;
-            max-width: 500px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         label {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-size: 1rem;
             color: #333;
         }
 
         input, select {
             width: 100%;
-            max-width: 500px;
-            padding: 15px;
-            font-size: 1.2rem;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 1rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             background-color: #7fcfcf;
             color: #333;
             box-sizing: border-box;
@@ -63,31 +66,42 @@
             color: #333;
         }
 
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none; /* Hides arrows in Chrome, Safari, Edge */
+            margin: 0; /* Removes extra margin */
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield; /* Hides arrows in Firefox */
+        }
+
         select {
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 20px;
+            background-position: right 10px center;
+            background-size: 15px;
         }
 
         .unit {
             position: absolute;
-            right: 15px;
+            right: 10px;
             top: 50%;
             transform: translateY(4px);
             color: #333;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
         }
 
         .info-icon {
             position: absolute;
-            right: -40px;
-            top: 45px;
-            width: 24px;
-            height: 24px;
-            border: 2px solid #333;
+            right: -30px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #333;
             border-radius: 50%;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -117,25 +131,28 @@
 
 
         button {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px;
-            font-size: 1.2rem;
-            background-color: rgb(244, 244, 64);
+            width: 100%; /* Matches the width of the input fields */
+            max-width: 400px; /* Ensures it has the same max-width as the form fields */
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #ffeb99;
             color: black;
             border: 2px solid black;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top: 20px;
+            margin-top: 15px;
+            display: block; /* Ensures it behaves like a block-level element */
+            margin-left: auto; /* Centers it horizontally */
+            margin-right: auto; /* Centers it horizontally */
         }
 
         button:hover {
-            background-color: rgb(203, 203, 52);
+            background-color: #ffd966;
         }
     </style>
 </head>
-<body>
+<body style="background: linear-gradient(to bottom, #f8fdfc 50%, #ffccd5 100%); min-height: 100vh;">
     <div class="container">
         <h1>Tell us more about <span class="highlight">you</span>:</h1>
         <form action="/results" method="POST">
