@@ -35,8 +35,14 @@ This project aims to create a machine learning model that predicts the likelihoo
 
 ### Files in the Repository
 - heart_disease_dataset.csv: The dataset containing patient data with health indicators used for training and testing the model.
+- Project Deliverable 1.pdf, Project Deliverable 2.pdf, Project Deliverable 3.pdf: Documentation detailing project milestones and development progress.
 - ml.py: The main script for data preprocessing, model training, evaluation, and generating visualizations.
-- Project Deliverable X.pdf: Documents detailing the project development.
+- app.py: Backend implementation for the web application, including endpoints and logic for prediction and suggestions.
+- predict.py: Utility script for making predictions using the trained logistic regression model.
+- health_suggestions.py: Script providing personalized health suggestions based on user input and prediction results.
+- logistic_model.joblib: Trained logistic regression model serialized for use in the web application.
+- scaler.joblib: Pre-trained scaler used for feature standardization.
+- templates/: Folder containing HTML templates for the web application's frontend
 
 ---
 
