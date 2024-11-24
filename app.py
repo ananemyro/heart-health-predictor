@@ -19,6 +19,10 @@ def home_page():
 def assess_page():
     return render_template('assess.html')
 
+@app.route('/about')
+def about_page():
+    return render_template('about.html')
+
 @app.route('/results', methods=['POST'])
 def results():
     # Get user inputs from the form
