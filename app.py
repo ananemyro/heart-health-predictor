@@ -2,6 +2,8 @@ from flask import Flask, request, render_template
 import joblib
 import pandas as pd
 
+from health_suggestions import health_suggestions
+
 app = Flask(__name__)
 
 # Load the model and scaler
@@ -21,7 +23,7 @@ def assess_page():
 def results():
     # Get user inputs from the form
     inputs = request.form
-    new_data = {
+    features = {
         'Age': [int(inputs['age'])],
         'Gender': [inputs['gender']],
         'Cholesterol': [int(inputs['cholesterol'])],
@@ -39,7 +41,7 @@ def results():
         'Chest Pain Type': [inputs['chest_pain']],
     }
 
-    new_data_df = pd.DataFrame(new_data, columns=['Age', 'Gender', 'Cholesterol', 'Blood Pressure', 'Heart Rate',
+    new_data_df = pd.DataFrame(features, columns=['Age', 'Gender', 'Cholesterol', 'Blood Pressure', 'Heart Rate',
                                               'Smoking', 'Alcohol Intake', 'Exercise Hours', 'Family History',
                                               'Diabetes', 'Obesity', 'Stress Level', 'Blood Sugar',
                                               'Exercise Induced Angina', 'Chest Pain Type'])
@@ -61,6 +63,9 @@ def results():
     # Convert probability to percentage
     probability_percentage = round(probability * 100)
 
+    # Generate suggestions
+    suggestions = health_suggestions(probability, features)
+
     # Determine the result message
     result_message = "Yes" if prediction == 1 else "No"
     description = (
@@ -73,7 +78,8 @@ def results():
         'results.html',
         result_message=result_message,
         description=description,
-        probability=probability_percentage
+        probability=probability_percentage,
+        suggestions=suggestions
     )
 
     # Return results to the user

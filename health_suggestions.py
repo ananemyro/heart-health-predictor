@@ -3,9 +3,9 @@ def health_suggestions(probability, features):
 
     # Cholesterol Threshold
     cholesterol_threshold = 200  # Default threshold
-    if features['Age'] < 19:
+    if features['Age'][0] < 19:
         cholesterol_threshold = 170  # Lower threshold for individuals under 19
-    if features['Cholesterol'] > cholesterol_threshold:
+    if features['Cholesterol'][0] > cholesterol_threshold:
         suggestions.append({
             'issue': 'High Cholesterol',
             'suggestion': (
@@ -21,9 +21,9 @@ def health_suggestions(probability, features):
 
     # Blood Pressure Threshold
     bp_threshold = 130  # Default threshold
-    if features['Age'] < 40 or features['Diabetes'] == 'Yes' or features['Obesity'] == 'Yes':
+    if features['Age'][0] < 40 or features['Diabetes'][0] == 'Yes' or features['Obesity'][0] == 'Yes':
         bp_threshold = 120  # Stricter threshold for younger individuals, diabetes, or obesity
-    if features['Blood Pressure'] > bp_threshold:
+    if features['Blood Pressure'][0] > bp_threshold:
         suggestions.append({
             'issue': 'High Blood Pressure',
             'suggestion': (
@@ -39,9 +39,9 @@ def health_suggestions(probability, features):
 
     # Heart Rate Threshold
     hr_threshold = 100  # Default threshold
-    if features['Stress Level'] >= 7 or features['Exercise Hours'] < 2:
+    if features['Stress Level'][0] >= 7 or features['Exercise Hours'][0] < 2:
         hr_threshold = 95  # Stricter threshold for high stress or low exercise
-    if features['Heart Rate'] > hr_threshold:
+    if features['Heart Rate'][0] > hr_threshold:
         suggestions.append({
             'issue': 'High Heart Rate',
             'suggestion': (
@@ -57,9 +57,9 @@ def health_suggestions(probability, features):
 
     # Blood Sugar Threshold
     sugar_threshold = 126  # Default threshold
-    if features['Obesity'] == 'Yes' or features['Family History'] == 'Yes':
+    if features['Obesity'][0] == 'Yes' or features['Family History'][0] == 'Yes':
         sugar_threshold = 110  # Lower threshold for obesity or family history
-    if features['Blood Sugar'] > sugar_threshold:
+    if features['Blood Sugar'][0] > sugar_threshold:
         suggestions.append({
             'issue': 'High Blood Sugar',
             'suggestion': (
@@ -75,9 +75,9 @@ def health_suggestions(probability, features):
 
     # Exercise Hours
     exercise_threshold = 2  # Default threshold
-    if features['Age'] >= 60:
+    if features['Age'][0] >= 60:
         exercise_threshold = 3  # Higher threshold for older adults
-    if features['Exercise Hours'] < exercise_threshold:
+    if features['Exercise Hours'][0] < exercise_threshold:
         suggestions.append({
             'issue': 'Low Physical Activity',
             'suggestion': (
@@ -92,7 +92,7 @@ def health_suggestions(probability, features):
         })
 
     # Obesity
-    if features['Obesity'] == 'Yes':
+    if features['Obesity'][0] == 'Yes':
         suggestions.append({
             'issue': 'Obesity',
             'suggestion': (
@@ -107,7 +107,7 @@ def health_suggestions(probability, features):
         })
 
     # Chest Pain
-    if features['Chest Pain Type'] != '':
+    if features['Chest Pain Type'][0] != '':
         suggestions.append({
             'issue': 'Chest Pain',
             'suggestion': (

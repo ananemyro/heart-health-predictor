@@ -88,6 +88,40 @@
             color: #666;
         }
 
+        .suggestions {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .suggestions h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .suggestions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .suggestions li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .suggestions a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .suggestions a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 
 </head>
@@ -104,6 +138,20 @@
         <p class="description">
             Probability of Heart Disease: <strong>{{ probability }}%</strong>
         </p>
+        <div class="suggestions">
+            {% if suggestions %}
+                <h3>Suggestions</h3>
+                <ul>
+                    {% for suggestion in suggestions %}
+                        <li>
+                            <strong>{{ suggestion.issue }}:</strong> {{ suggestion.suggestion }}
+                            <br>
+                            <br>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
         <a href="/assess" class="back-btn">Back to Assessment</a>
     </div>
 </body>
