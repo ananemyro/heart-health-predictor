@@ -67,6 +67,7 @@
             background-color: #ff7171;
             transform: rotate(-45deg);
             margin-right: 100px;
+            margin-top: 40px;
         }
 
         .heart-shape::before,
@@ -157,7 +158,7 @@
             font-weight: bold;
             color: #333;
             background-color: #ffeb99;
-            border: 2px solid #ffeb99;
+            border: 2px solid black;
             border-radius: 8px;
             text-decoration: none;
             cursor: pointer;
@@ -169,13 +170,13 @@
         }
     </style>
 </head>
-<body>
+<body style="background: linear-gradient(to bottom, #f8fdfc 50%, #ffccd5 100%); min-height: 100vh;">
 
     <header>
         <div class="logo">HeartMap</div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Assess</a>
+            <a href="/assess">Assess</a>
             <a href="#">About</a>
         </nav>
     </header>
@@ -186,8 +187,8 @@
         </div>
         <div class="content-wrapper">
             <h1>Assess your risk of <span class="highlight">heart disease</span> with the help of machine learning predictions.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices velit sem. Nunc velit leo, venenatis et enim sit amet, blandit semper dolor. Vestibulum suscipit libero velit, vel interdum augue varius vel. Praesent sed faucibus sapien.</p>
-            <a href="#" class="start-btn">Start!</a>
+            <p>Use this tool to assess your risk of heart disease based on key health indicators. Simply provide your medical and lifestyle details, and our machine learning model will predict the likelihood of heart disease to help you make informed health decisions.</p>
+            <a href="/assess" class="start-btn">Start!</a>
         </div>
     </div>
 

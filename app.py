@@ -10,8 +10,12 @@ scaler = joblib.load('scaler.joblib')
 
 
 @app.route('/')
-def assess():
-    return render_template('assess.html')  # Render the HTML form
+def home_page():
+    return render_template('index.html')
+
+@app.route('/assess')
+def assess_page():
+    return render_template('assess.html')
 
 @app.route('/results', methods=['POST'])
 def results():
