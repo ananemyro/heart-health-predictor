@@ -6,62 +6,105 @@
     <title>Results</title>
     <style>
         body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9f4;
-    color: #333;
-}
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9f4;
+            color: #333;
+        }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 2px solid #ff7171;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
 
-.back-arrow {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin-right: 80px;
+        }
 
-.result-text {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+        nav a:hover {
+            color: #ff7171;
+        }
 
-.result-text .highlight {
-    color: #ff6b6b;
-}
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
 
-.description {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: justify;
-    color: #666;
-}
+        .back-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+            background-color: #ffeb99;
+            border: 2px solid black;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #ffd966;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .result-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .result-text .highlight {
+            color: #ff6b6b;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+            color: #666;
+        }
 
     </style>
 
 </head>
-<body>
+<body style="background: linear-gradient(to bottom, #f8fdfc 50%, #ffccd5 100%); min-height: 100vh;">
+    <header>
+        <div class="logo">HeartMap</div>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
     <div class="container">
-        <a href="/" class="back-arrow">&larr;</a>
         <h1>Results</h1>
         <p class="result-text"><span class="highlight">{{ result_message }}</span>, {{ description }}</p>
         <p class="description">
-            Probability of Heart Disease: <strong>{{ probability | round(2) }}</strong>
+            Probability of Heart Disease: <strong>{{ probability }}%</strong>
         </p>
-        <a href="/">Back to Assessment</a>
+        <a href="/assess" class="back-btn">Back to Assessment</a>
     </div>
 </body>
 </html>

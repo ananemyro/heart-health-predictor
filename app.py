@@ -58,6 +58,9 @@ def results():
     prediction = logreg.predict(new_data_scaled)[0]
     probability = logreg.predict_proba(new_data_scaled)[0][1]
 
+    # Convert probability to percentage
+    probability_percentage = round(probability * 100)
+
     # Determine the result message
     result_message = "Yes" if prediction == 1 else "No"
     description = (
@@ -70,7 +73,7 @@ def results():
         'results.html',
         result_message=result_message,
         description=description,
-        probability=probability
+        probability=probability_percentage
     )
 
     # Return results to the user
