@@ -15,9 +15,45 @@
             align-items: center;
         }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            border-bottom: 2px solid #ff7171;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-left: 40px;
+            color: #333;
+        }
+
+        nav {
+            margin-right: 0;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin-right: 40px;
+        }
+
+        nav a:hover {
+            color: #ff7171;
+        }
+
         .container {
             width: 100%;
             max-width: 800px;
+            margin: 50px auto 0 auto;
+            padding: 20px;
             padding-bottom: 20px;
         }
 
@@ -153,6 +189,14 @@
     </style>
 </head>
 <body style="background: linear-gradient(to bottom, #f8fdfc 50%, #ffccd5 100%); min-height: 100vh;">
+    <!-- Reused Header -->
+    <header>
+        <div class="logo">HeartMap</div>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <!-- Main Content -->
     <div class="container">
         <h1>Tell us more about <span class="highlight">you</span>:</h1>
         <form action="/results" method="POST">
