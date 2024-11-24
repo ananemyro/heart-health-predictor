@@ -158,7 +158,7 @@
         <form action="/results" method="POST">
             <div class="form-group">
                 <label for="age">Age</label>
-                <input type="number" id="age" name="age" placeholder="Enter..." required>
+                <input type="number" id="age" name="age" placeholder="Enter..." required min="0">
             </div>
 
             <div class="form-group">
@@ -172,19 +172,19 @@
 
             <div class="form-group">
                 <label for="cholesterol">Cholesterol</label>
-                <input type="number" id="cholesterol" name="cholesterol" placeholder="Enter..." required>
+                <input type="number" id="cholesterol" name="cholesterol" placeholder="Enter..." required min="0">
                 <span class="unit">mg/dl</span>
             </div>
 
             <div class="form-group">
                 <label for="blood_pressure">Blood Pressure</label>
-                <input type="number" id="blood_pressure" name="blood_pressure" placeholder="Enter..." required>
+                <input type="number" id="blood_pressure" name="blood_pressure" placeholder="Enter..." required min="0">
                 <span class="unit">mmHg</span>
             </div>
 
             <div class="form-group">
                 <label for="heart_rate">Heart Rate</label>
-                <input type="number" id="heart_rate" name="heart_rate" placeholder="Enter..." required>
+                <input type="number" id="heart_rate" name="heart_rate" placeholder="Enter..." required min="0">
                 <span class="unit">bpm</span>
             </div>
 
@@ -208,7 +208,7 @@
 
             <div class="form-group">
                 <label for="exercise">Exercise Hours</label>
-                <input type="number" id="exercise" name="exercise" placeholder="Enter..." required>
+                <input type="number" id="exercise" name="exercise" placeholder="Enter..." required min="0">
                 <span class="unit">hrs/week</span>
             </div>
 
@@ -241,13 +241,13 @@
 
             <div class="form-group">
                 <label for="stress_level">Stress Level</label>
-                <input type="number" id="stress_level" name="stress_level" placeholder="Enter..." required>
+                <input type="number" id="stress_level" name="stress_level" placeholder="Enter..." required min="0" max="10">
                 <span class="unit">1-10</span>
             </div>
 
             <div class="form-group">
                 <label for="blood_sugar">Blood Sugar</label>
-                <input type="number" id="blood_sugar" name="blood_sugar" placeholder="Enter..." required>
+                <input type="number" id="blood_sugar" name="blood_sugar" placeholder="Enter..." required min="0">
                 <span class="unit">mg/dl</span>
             </div>
 
